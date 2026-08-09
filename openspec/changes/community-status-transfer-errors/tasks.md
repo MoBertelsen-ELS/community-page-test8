@@ -1,5 +1,12 @@
 # Tasks: community-status-transfer-errors
 
+## Repository Execution Scope
+
+- This repository contains only `docs/` and `openspec/` — no Pure/Graphene application source tree exists here.
+- Task Group 1 (Validate Production Dependencies, 1.1-1.5), Task 5.1 (Guard Rails), and the implementation-heavy portions of Test Scenarios, Verification/Proof Plan, and Accepted implementation proof plan (covering REQ-001 through REQ-015) require real Pure/Graphene UI code, wired backend APIs, and e2e/accessibility/responsive-visual/CI test suites that only exist in the target Pure product repository — that work executes in that repository's own implementation-PR track, not this one.
+- This repository's implementation-PR track covers only: (a) reconciling stale `tasks.md` checkboxes for Task Groups 2-4 against already-approved, already-merged intent content, and (b) recording dependency-validation and guard-rail execution status as enterprise runtime state under `.agent-platform/enterprise/changes/community-status-transfer-errors/` (never under `docs/` or `openspec/`), which supports REQ-016 (documenting any missing production API/data dependency before implementation proceeds).
+- No other portion of this task list is staged for execution as a file change inside this repository.
+
 ## 1. Validate Production Dependencies
 
 - [ ] 1.1 Locate real Pure repository entry points for `Administrator > Community` navigation.
@@ -10,45 +17,45 @@
 
 ## 2. Author The Intent Package
 
-- [ ] 2.1 Author `proposal.md` with concrete product-facing content.
-- [ ] 2.2 Author `design.md` with concrete product-facing content.
-- [ ] 2.3 Author `tasks.md` with concrete product-facing content.
+- [x] 2.1 Author `proposal.md` with concrete product-facing content.
+- [x] 2.2 Author `design.md` with concrete product-facing content.
+- [x] 2.3 Author `tasks.md` with concrete product-facing content.
 
 ## 3. Define The Delta Spec
 
-- [ ] 3.1 Capture this behavior precisely in the delta spec: Community admin can open the Community status page from Administrator > Community.
-- [ ] 3.2 Capture this behavior precisely in the delta spec: The page shows harvester running/interrupted state, latest harvest, next harvest, and unresolved transfer error count.
-- [ ] 3.3 Capture this behavior precisely in the delta spec: The default state has no selected error and does not overwhelm the user with record data.
-- [ ] 3.4 Capture this behavior precisely in the delta spec: The unresolved queue groups errors by affected instance by default.
-- [ ] 3.5 Capture this behavior precisely in the delta spec: A manager can filter unresolved errors by time range and content type, and the queue updates consistently with the applied filters.
-- [ ] 3.6 Capture this behavior precisely in the delta spec: Selecting an instance and error type shows a plain-language description, how-to-fix guidance, and affected records.
-- [ ] 3.7 Capture this behavior precisely in the delta spec: The error-type detail pane includes a suggested action alongside the plain-language description, how-to-fix guidance, and affected records.
-- [ ] 3.8 Capture this behavior precisely in the delta spec: Error descriptions avoid raw developer exception language unless explicitly expanded for support/debug use.
-- [ ] 3.9 Capture this behavior precisely in the delta spec: The manager can notify the affected instance from the selected error type.
-- [ ] 3.10 Capture this behavior precisely in the delta spec: The notify modal previews the task item that will appear in the instance task panel.
-- [ ] 3.11 Capture this behavior precisely in the delta spec: After sending, the selected error type shows an indication that the task has been sent.
-- [ ] 3.12 Capture this behavior precisely in the delta spec: Record IDs are displayed below record titles, not trailing inline after titles.
-- [ ] 3.13 Capture this behavior precisely in the delta spec: Header and content remain aligned across common desktop widths.
-- [ ] 3.14 Capture this behavior precisely in the delta spec: The implementation uses Graphene/Pure components for buttons, badges/tags, modals, tables, navigation, and task-item rendering where available.
-- [ ] 3.15 Capture this behavior precisely in the delta spec: The implementation does not create extra backend calls for fields already available in the harvester status/error payload.
-- [ ] 3.16 Capture this behavior precisely in the delta spec: Any missing production API/data dependency is documented before implementation proceeds.
+- [x] 3.1 Capture this behavior precisely in the delta spec: Community admin can open the Community status page from Administrator > Community.
+- [x] 3.2 Capture this behavior precisely in the delta spec: The page shows harvester running/interrupted state, latest harvest, next harvest, and unresolved transfer error count.
+- [x] 3.3 Capture this behavior precisely in the delta spec: The default state has no selected error and does not overwhelm the user with record data.
+- [x] 3.4 Capture this behavior precisely in the delta spec: The unresolved queue groups errors by affected instance by default.
+- [x] 3.5 Capture this behavior precisely in the delta spec: A manager can filter unresolved errors by time range and content type, and the queue updates consistently with the applied filters.
+- [x] 3.6 Capture this behavior precisely in the delta spec: Selecting an instance and error type shows a plain-language description, how-to-fix guidance, and affected records.
+- [x] 3.7 Capture this behavior precisely in the delta spec: The error-type detail pane includes a suggested action alongside the plain-language description, how-to-fix guidance, and affected records.
+- [x] 3.8 Capture this behavior precisely in the delta spec: Error descriptions avoid raw developer exception language unless explicitly expanded for support/debug use.
+- [x] 3.9 Capture this behavior precisely in the delta spec: The manager can notify the affected instance from the selected error type.
+- [x] 3.10 Capture this behavior precisely in the delta spec: The notify modal previews the task item that will appear in the instance task panel.
+- [x] 3.11 Capture this behavior precisely in the delta spec: After sending, the selected error type shows an indication that the task has been sent.
+- [x] 3.12 Capture this behavior precisely in the delta spec: Record IDs are displayed below record titles, not trailing inline after titles.
+- [x] 3.13 Capture this behavior precisely in the delta spec: Header and content remain aligned across common desktop widths.
+- [x] 3.14 Capture this behavior precisely in the delta spec: The implementation uses Graphene/Pure components for buttons, badges/tags, modals, tables, navigation, and task-item rendering where available.
+- [x] 3.15 Capture this behavior precisely in the delta spec: The implementation does not create extra backend calls for fields already available in the harvester status/error payload.
+- [x] 3.16 Capture this behavior precisely in the delta spec: Any missing production API/data dependency is documented before implementation proceeds.
 
 ## 4. Prepare Review Readiness
 
-- [ ] 4.1 Ensure the intent package covers this review checkpoint: Community admin can open the `Community status` page from `Administrator > Community`.
-- [ ] 4.2 Ensure the intent package covers this review checkpoint: The page shows harvester running/interrupted state, latest harvest, next harvest, and unresolved transfer error count.
-- [ ] 4.3 Ensure the intent package covers this review checkpoint: The default state has no selected error and does not overwhelm the user with record data.
-- [ ] 4.4 Ensure the intent package covers this review checkpoint: The unresolved queue groups errors by affected instance by default.
-- [ ] 4.5 Ensure the intent package covers this review checkpoint: Selecting an instance and error type shows a plain-language description, how-to-fix guidance, and affected records.
-- [ ] 4.6 Ensure the intent package covers this review checkpoint: Error descriptions avoid raw developer exception language unless explicitly expanded for support/debug use.
-- [ ] 4.7 Ensure the intent package covers this review checkpoint: The manager can notify the affected instance from the selected error type.
-- [ ] 4.8 Ensure the intent package covers this review checkpoint: The notify modal previews the task item that will appear in the instance task panel.
-- [ ] 4.9 Ensure the intent package covers this review checkpoint: After sending, the selected error type shows an indication that the task has been sent.
-- [ ] 4.10 Ensure the intent package covers this review checkpoint: Record IDs are displayed below record titles, not trailing inline after titles.
-- [ ] 4.11 Ensure the intent package covers this review checkpoint: Header and content remain aligned across common desktop widths.
-- [ ] 4.12 Ensure the intent package covers this review checkpoint: The implementation uses Graphene/Pure components for buttons, badges/tags, modals, tables, navigation, and task-item rendering where available.
-- [ ] 4.13 Ensure the intent package covers this review checkpoint: The implementation does not create extra backend calls for fields already available in the harvester status/error payload.
-- [ ] 4.14 Ensure the intent package covers this review checkpoint: Any missing production API/data dependency is documented before implementation proceeds.
+- [x] 4.1 Ensure the intent package covers this review checkpoint: Community admin can open the `Community status` page from `Administrator > Community`.
+- [x] 4.2 Ensure the intent package covers this review checkpoint: The page shows harvester running/interrupted state, latest harvest, next harvest, and unresolved transfer error count.
+- [x] 4.3 Ensure the intent package covers this review checkpoint: The default state has no selected error and does not overwhelm the user with record data.
+- [x] 4.4 Ensure the intent package covers this review checkpoint: The unresolved queue groups errors by affected instance by default.
+- [x] 4.5 Ensure the intent package covers this review checkpoint: Selecting an instance and error type shows a plain-language description, how-to-fix guidance, and affected records.
+- [x] 4.6 Ensure the intent package covers this review checkpoint: Error descriptions avoid raw developer exception language unless explicitly expanded for support/debug use.
+- [x] 4.7 Ensure the intent package covers this review checkpoint: The manager can notify the affected instance from the selected error type.
+- [x] 4.8 Ensure the intent package covers this review checkpoint: The notify modal previews the task item that will appear in the instance task panel.
+- [x] 4.9 Ensure the intent package covers this review checkpoint: After sending, the selected error type shows an indication that the task has been sent.
+- [x] 4.10 Ensure the intent package covers this review checkpoint: Record IDs are displayed below record titles, not trailing inline after titles.
+- [x] 4.11 Ensure the intent package covers this review checkpoint: Header and content remain aligned across common desktop widths.
+- [x] 4.12 Ensure the intent package covers this review checkpoint: The implementation uses Graphene/Pure components for buttons, badges/tags, modals, tables, navigation, and task-item rendering where available.
+- [x] 4.13 Ensure the intent package covers this review checkpoint: The implementation does not create extra backend calls for fields already available in the harvester status/error payload.
+- [x] 4.14 Ensure the intent package covers this review checkpoint: Any missing production API/data dependency is documented before implementation proceeds.
 
 ## 5. Guard Rails
 
